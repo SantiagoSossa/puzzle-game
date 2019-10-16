@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import Game from './Game/Game';
-import './App.css';
+import './css/main.css';
 
 function App() {
   return (
