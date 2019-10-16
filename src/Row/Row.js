@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Cell(props) {
+export default function Row(props) {
     return(
-        <div className="Cell">
+        <div className="" id="">
             {props.children}
         </div>
     )
