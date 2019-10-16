@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Row(props) {
     return(
-        <div className="" id="">
+        <div className="row" style={{display: 'flex', flexFlow: 'row'}}>
             {props.children}
         </div>
     )
