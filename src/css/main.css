@@ -134,7 +134,8 @@ body {
     border-radius: 7px;
   }
   .row {
-    display: inline-block;
+    display: flex;
+    flex-flow: row;
   }
   .cell {
     height: 60px;
@@ -228,7 +229,8 @@ body {
     border-radius: 7px;
   }
   .row {
-    display: inline-block;
+    display: flex;
+    flex-flow: row;
   }
   .cell {
     height: 100px;
