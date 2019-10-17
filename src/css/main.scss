@@ -96,6 +96,23 @@ body {
             color: $primary-color;
         }
     }
+
+    .startBtn {
+        transform: translateX(100px);
+        padding: 12px 40px;
+        background: $secondary-color;
+        border-radius: 5px;
+        border: 0;
+        color: $bg-color;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 18px;
+        @include transition;
+        &:hover {
+            box-shadow: 0 7px 10px 0 #ff475681;
+        }
+
+    }
 }
 
 @include desktop {
