@@ -1,13 +1,16 @@
+/* eslint-disable eqeqeq */
 import React, { Component } from 'react';
 import Board from '../Board/Board';
 
 export default class Game extends Component {
 
     state = {
-        cells: 5,
+        cells: 1,
         movements: 0,
         finished: false,
-        collection: []
+        collection: [],
+        start : false,
+        timer : 0
     }
 
     chunk = (array, size) => {
@@ -66,8 +69,22 @@ export default class Game extends Component {
                 this.setState({ collection: updateCollection });
             }
         }
+
+        const value = e.target.id
+        if (value != 0){
+            this.setState({
+                movements : this.state.movements+1
+            })
+        }
+
         const originalArray = JSON.stringify([...Array(Math.pow((this.state.cells), 2)).keys()]);
-        this.setState({finished: originalArray.substr(1,originalArray.length-2) == updateCollection.join(",")});
+        const resolved = originalArray.substr(1,originalArray.length-2) == updateCollection.join(",")
+        if (resolved){
+            clearInterval(this.intervalTimer)
+            this.setState({
+                finished: resolved
+            });
+        }
     }
 
     startGame = () => {
@@ -75,20 +92,34 @@ export default class Game extends Component {
         var array = [...Array(Math.pow((this.state.cells), 2)).keys()];
         shuffle(array);
         const collection = this.chunk(array, this.state.cells);
-        this.setState({ collection: collection });
+        this.setState({ collection,start:true });
+        this.timerStart()
+    }
+
+    intervalTimer = 0;
+
+    timerStart () {
+        this.intervalTimer = setInterval(() => {
+            this.setState({
+                timer : this.state.timer + 1
+            })
+        }, 1000);
+    }
+    
+
+    componentWillUnmount(){
+        clearInterval(this.timerStart)
     }
 
     render() {
 
-
-
         const isFinished = this.state.finished ? <h3>You Win!</h3> : null;
-
 
         return (
             <div className="unselectable" id="game">
                 <h1 className="title">Puzzle game</h1>
                 <div className="displayContainer">
+                    {this.state.start ? 
                     <div className="side">
                         <div className="statContainer">
                             <div className="header">
@@ -101,10 +132,12 @@ export default class Game extends Component {
                                 Timer &emsp; <span className="stat">{this.state.timer}</span>
                             </div>
                         </div>
-                    </div>
-                    <Board row={this.state.cells} collection={this.state.collection} clicked={this.handleClick} />
+                    </div> : 
+                    null
+                    }
+                    {this.state.start ? <Board row={this.state.cells} collection={this.state.collection} clicked={this.handleClick} /> : null}
                     {isFinished}
-                    <button onClick={this.startGame}>Start</button>
+                    {this.state.start ? null : <button className="startBtn" onClick={this.startGame}>Start</button>}
                 </div>
             </div>
         )

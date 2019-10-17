@@ -90,7 +90,7 @@ body {
 
         font-size: 2rem;
 
-        @include transition;
+        // @include transition;
 
         &:hover {
             color: $primary-color;
@@ -189,7 +189,7 @@ body {
 
         font-size: 3.5rem;
 
-        @include transition;
+        // @include transition;
 
         &:hover {
             color: $primary-color;
