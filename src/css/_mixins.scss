@@ -1,0 +1,15 @@
+@mixin desktop {
+    @media (min-width: $desktop){
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width: $mobile){
+        @content;
+    }
+}
+
+@mixin transition {
+    transition : all 0.4s ease;
+}
