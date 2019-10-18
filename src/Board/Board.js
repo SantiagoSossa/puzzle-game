@@ -13,7 +13,7 @@ export default function Board(props) {
     ));
 
     return(
-        <div className="board">
+        <div className="board" id="board">
             {board}
         </div>
     )

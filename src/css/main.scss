@@ -2,6 +2,9 @@
 @import 'variables';
 @import 'mixins';
 
+@import 'board';
+@import 'side';
+
 /*
     GENERAL
 */
@@ -11,22 +14,25 @@
 
 body {
     background: $bg-color;
-    position: relative;
 }
 
 @include mobile {
 
     #game {
         text-align: center;
-        padding: 30px 0;
         @include transition;
-        .title {
-            color: $bg-color;
-            text-shadow: 3px 2px 1px  $font-color;
+        padding-top: 50%;
+    }
+
+    .mainTitle {
+        background: #101820;
+        padding: 20px;
+        h1 {
+            color: white;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            font-size: 4rem;
+            letter-spacing: 20px;
+            font-size: 2rem;
+            @include transition
         }
     }
 
@@ -35,71 +41,12 @@ body {
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
-        // padding-top: 30px;
-        // padding-right: 15%;
+        padding-top: 30px;
     }
-
-    .side {
-        border:2px solid $primary-color;
-        padding: 10px 20px;
-        text-align: left;
-        margin-bottom:20px ;
-        width: 80%;
-
-        .header {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: $primary-color;
-        }
-
-        .statTitle {
-            color:$font-color;
-            font-weight: bold;
-        }
-
-        .stat {
-            @include transition;
-        }
-
-    }
-
-    .board {
-        text-align: center;
-        border:10px solid $primary-color;
-        border-radius: 7px;
-    }
-
-    .row {
-        display: flex;
-        flex-flow: row;
-    }
-
-    .cell {
-        // background: $primary-color;
-        height: 60px;
-        width: 60px;
-        // border: 1px solid #ccc;
-        box-shadow: 0 0 0 1px #ccc;
-        margin: 0 1px;
-        text-align: center;
-        line-height: 60px;
-        color: $font-color;
-        cursor: pointer;
-
-        font-size: 2rem;
-
-        // @include transition;
-
-        &:hover {
-            color: $primary-color;
-        }
-    }
-
+    
     .startBtn {
-        transform: translateX(100px);
         padding: 12px 40px;
-        background: $secondary-color;
+        background: $btn-color;
         border-radius: 5px;
         border: 0;
         color: $bg-color;
@@ -107,8 +54,11 @@ body {
         text-transform: uppercase;
         font-size: 18px;
         @include transition;
+        color: white;
+        font-weight: bold;
+
         &:hover {
-            box-shadow: 0 7px 10px 0 #ff475681;
+            box-shadow: 0 7px 10px 0 $btn-color-shadow;
         }
 
     }
@@ -117,80 +67,23 @@ body {
 @include desktop {
 
     #game {
-        @include transition;
-        .title {
-            color: $bg-color;
-            text-shadow: 3px 2px 1px  $font-color;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            font-size: 5rem;
+        padding-top: 15%;
+        padding-bottom: 8%;
+    }
+
+    .mainTitle {
+        h1 {
+            font-size: 8rem;
         }
     }
 
     .displayContainer {
-        display: flex;
         flex-flow: row wrap;
-        justify-content: center;
         align-items: flex-start;
-        padding-top: 30px;
         padding-right: 15%;
     }
-
-    .side {
-        border:2px solid $primary-color;
-        padding: 20px 30px;
-        text-align: left;
-        margin-right: 20px;
-        width: auto;
-
-        .header {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: $primary-color;
-        }
-
-        .statTitle {
-            color:$font-color;
-            font-weight: bold;
-        }
-
-        .stat {
-            @include transition;
-        }
-
-    }
-
-    .board {
-        text-align: center;
-        border:10px solid $primary-color;
-        border-radius: 7px;
-    }
-
-    .row {
-        display: flex;
-        flex-flow: row;
-    }
-
-    .cell {
-        // background: $primary-color;
-        height: 100px;
-        width: 100px;
-        // border: 1px solid #ccc;
-        box-shadow: 0 0 0 1px #ccc;
-        margin: 0 1px;
-        text-align: center;
-        line-height: 100px;
-        color: $font-color;
-        cursor: pointer;
-
-        font-size: 3.5rem;
-
-        // @include transition;
-
-        &:hover {
-            color: $primary-color;
-        }
+    
+    .startBtn {
+        transform: translateX(100px);
     }
 }

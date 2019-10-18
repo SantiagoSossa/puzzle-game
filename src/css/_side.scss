@@ -1,0 +1,41 @@
+@include mobile {
+    .side {
+        background: white;
+        box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2);
+        text-align: left;
+        margin-right: 0px;
+        width: auto;
+        overflow: hidden;
+        width: 80%;
+        margin-bottom: 10%;
+
+        .header {
+            padding: 10px 30px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background: $secondary-color;
+            color:white
+        }
+
+        .statTitle {
+            padding: 15px 20px;
+            color: $font-color;
+            font-weight: bold;
+            border-top:2px solid $secondary-color;
+        }
+
+        .stat {
+            @include transition;
+            float: right;
+        }
+
+    }
+}
+
+@include desktop {
+    .side {
+        margin-right: 20px;
+        width: auto;
+        width: 20%;
+    }
+}

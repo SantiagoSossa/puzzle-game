@@ -2,17 +2,14 @@
     COLORS
 */
 $font-color: #333333;
-$primary-color: #C51C1F;
-$border-color: #141E26;
-$secondary-color : #ff4757;
-// $font-color: #2E2E2E;
-// $primary-color: #D50F51;
-// $secondary-color: #1C1C1C;
-// $hover-color: #F27A8E;
-// $border-color: #C20337;
+$primary-color: rgba(203,150,244,1);
+$secondary-color : rgba(231,143,225,1);
+
+$btn-color: rgb(223, 100, 145);
+$btn-color-shadow: rgba(223, 100, 145,0.5);
 
 $shadow-color: rgba(0,0,0,0.2);
-$bg-color : white;
+$bg-color : #FCF0F8;
 
 /*
     MEDIA QUERIES
