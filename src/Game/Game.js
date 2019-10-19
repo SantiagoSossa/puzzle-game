@@ -117,7 +117,6 @@ export default class Game extends Component {
                 actualValue = nextValue
             }
         } else if (rowIndexClicked == zeroRowIndex) {
-            console.log("si")
 
             let colInicial = columnIndexClicked
             let rowInicial = rowIndexClicked
