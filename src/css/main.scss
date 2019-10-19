@@ -12,8 +12,16 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+input:focus{
+    outline: none;
+}
+
 body {
     background: $bg-color;
+}
+
+.disabled {
+    pointer-events: none;
 }
 
 @include mobile {
@@ -44,7 +52,35 @@ body {
         padding-top: 30px;
     }
     
+
+    .cellControllers{
+
+        padding: 20px;
+        box-shadow: 0 7px 7px 0 rgba(0,0,0,0.2);
+        background: white;
+        border-radius: 7px;
+        max-width: 200px;
+        // overflow: hidden;
+
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 40px;
+            border: 0;
+            margin: 15px 0;
+            color: $font-color;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+
     .startBtn {
+        display: block;
+        width: 100%;
         padding: 12px 40px;
         background: $btn-color;
         border-radius: 5px;
@@ -62,12 +98,25 @@ body {
         }
 
     }
+
+    .success {
+        padding: 20px;
+        text-align: center;
+        
+        h3{
+            border-radius: 7px;
+            font-size: 1.5rem;
+            color:white;
+            padding: 20px;
+            background: $secondary-color;
+        }
+    }
 }
 
 @include desktop {
 
     #game {
-        padding-top: 15%;
+        padding-top: 12%;
         padding-bottom: 8%;
     }
 
@@ -83,7 +132,7 @@ body {
         padding-right: 15%;
     }
     
-    .startBtn {
+    .cellControllers {
         transform: translateX(100px);
     }
 }

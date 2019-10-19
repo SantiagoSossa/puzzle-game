@@ -1,9 +1,9 @@
 @include mobile {
     .board {
-        max-width: 100%;
+        max-width: 95%;
         overflow: hidden;
         padding:2.5px;
-        background: linear-gradient(to bottom, $secondary-color 0%, $primary-color 100%);
+        background: linear-gradient(to bottom, $secondary-color, $primary-color);
         box-shadow: 0 7px 20px 0 rgba(0,0,0,0.3);
         margin-bottom: 25%;
     }
@@ -14,12 +14,12 @@
     }
 
     .cell {
-        height: 70px;
-        width: 70px;
-        box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+        height: 80px;
+        width: 80px;
+        box-shadow: 0 0 0 1px rgba(100,100,100,0.1);
         margin: 2px;
         text-align: center;
-        line-height: 70px;
+        line-height: 80px;
         color: white;
         cursor: pointer;
         font-size: 2rem;

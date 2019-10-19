@@ -29,6 +29,27 @@
             float: right;
         }
 
+        .restartContainer{
+            padding: 20px;
+            .restartBtn {
+                border: 0;
+                width: 100%;
+                padding: 10px;
+                border-radius: 6px;
+                display: block;
+                font-weight: bold;
+                color:white;
+                background:$primary-color;
+                font-size: 1.2rem;
+                cursor: pointer;
+                @include transition;
+                
+                &:hover{
+                    box-shadow: 0 7px 7px 0 $btn-color-shadow;
+                }
+            }
+        }
+
     }
 }
 
